@@ -1,5 +1,5 @@
 {
-  "name": "jdash-api-jwt",
+  "name": "jdash-auth-jwt",
   "version": "1.0.0",
   "description": "JDash JWT authentication library",
   "main": "./lib/index.js",
