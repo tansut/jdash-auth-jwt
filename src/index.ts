@@ -3,7 +3,7 @@ import * as jwt from 'jsonwebtoken';
 export interface ITokenOptions {
     secret: string;
     apikey: string;
-    expirationMiliseconds?: number;
+    expirationInSeconds?: number;
 }
 
 export default class ApiAuth {
@@ -18,7 +18,7 @@ export default class ApiAuth {
                 data: pl
             }, options.secret, {
                     algorithm: 'HS256',
-                    expiresIn: options.expirationMiliseconds || 1000 * 60 * 60 * 12,
+                    expiresIn: options.expirationInSeconds ||  60 * 60 * 12,
                     issuer: 'api.jdash.io',
                     subject: options.apikey
                 }, (err, token) => {
